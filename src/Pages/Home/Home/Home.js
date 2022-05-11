@@ -1,12 +1,13 @@
 import React from 'react';
-// import useAuth from '../../../hooks/useAuth';
+import AboutMe from '../AboutMe/AboutMe';
 import Banner from '../Banner/Banner';
 
 const Home = () => {
-    // const { user } = useAuth();
     return (
         <div>
             <Banner></Banner>
+            <AboutMe></AboutMe>
+            {/* <h2>This is home</h2> */}
         </div>
     );
 };

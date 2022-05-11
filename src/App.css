@@ -1,7 +1,22 @@
 .App {
-  text-align: center;
-}
+  /* text-align: center; */
+  /* background-color:#282c34; */
+  /* background-color: #95C99E; */
+  font-family: 'Abril Fatface', cursive;
+/* font-family: 'Alfa Slab One', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif; */
 
+  min-height: 100%;
+  font-family: Roboto;
+}
+.default-color{
+  color:#338F9A !important;
+}
+.default-bg{
+  background-color:#338F9A;
+  color:#fff;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +29,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #6d9eff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

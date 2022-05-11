@@ -1,28 +1,24 @@
-.nav-bar{
-    background-color: #C4B8B8
+.default-bg{
+    background-color:#338F9A !important;
+    color:#fff;
+  }
+.default-color{
+    color:#338F9A !important;
+  }
+.default-border{
+    border-color:#338F9A;
 }
-.btn-menual{
-    background-color: #00afefb9;
-    padding: 3px 20px;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid transparent;
+.banner-img{
+    width: 300px;
+    height: 300px;
 }
-.btn-menual:hover{
-    background-color: #00afef;
-    /* color: white; */
-    border: 1px solid rgb(17, 43, 53);
-    box-shadow: 2px;
-
+.about-me-tabs Tab{
+border: 1px solid gray;
 }
-.user-logo{
-    width: 20px;
-
-}
-.user-dropdown, .logout{
-    color: black
-}
-#dropdown-button-dark-example2{
-    border-radius: 15px;;
-}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .banner-img{
+        width: 150px;
+        height: 150px;
+    }
+  }
