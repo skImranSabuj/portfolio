@@ -14,6 +14,7 @@ import avatarImage from '../../static/images/profile1.png';
 import { Avatar, Button, Container, Menu, MenuItem, Stack, Tooltip } from '@mui/material';
 import ProfileImage from "../ProfileImage/ProfileImage";
 import { styles } from "../../theme/styles";
+import SubheaderText from "../SubHeaderText/SubheaderText";
 const pages = [
   "Biography",
   "Experiences",
@@ -133,8 +134,17 @@ const Header = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ backgroundColor: "black" }}
+                  >
+                    {/* <Typography textAlign="center" style={{ color: "black" }}>
+                      {page}
+                    </Typography> */}
+                    <SubheaderText style={{ color: "black" }}>
+                      {page}
+                    </SubheaderText>
                   </MenuItem>
                 ))}
               </Menu>

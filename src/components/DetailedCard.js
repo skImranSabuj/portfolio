@@ -44,7 +44,7 @@ export default function DetailedCard({ project }) {
   return (
     <Card
       sx={{
-        maxWidth: { xs: "90%", sm: "30%" },
+        // maxWidth: { xs: "90%", sm: "30%" },
         backgroundColor: "#F3F9FA",
         elevation: 10,
       }}

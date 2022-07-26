@@ -8,6 +8,7 @@ import AnimatedText from "react-animated-text-content";
 import "./Banner.css";
 import { styles } from "../../../theme/styles";
 import ProfileImage from "../../../components/ProfileImage/ProfileImage";
+import ParticlesInit from "../../../components/ParticlesInit/ParticlesInit";
 const Banner = () => {
   let professionString = "A Passionate Software Engineer";
   const [profession, setProfession] = useState(
@@ -23,6 +24,7 @@ const Banner = () => {
   }
   return (
     <Box className="banner-Container">
+      <ParticlesInit />
       <Container maxWidth="lg">
         <Box sx={{ flexGrow: 1, py: 1 }}>
           <Grid

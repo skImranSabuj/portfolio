@@ -1,4 +1,4 @@
-import { Button, Typography, Box, Grid } from "@mui/material";
+import { Button, Typography, Box, Grid, Divider } from "@mui/material";
 import React from "react";
 import Header from "../../components/Header/Header";
 import SchoolIcon from "@mui/icons-material/School";
@@ -18,7 +18,7 @@ let experienceData = [
   },
 ];
 const experienceCardStyle = {
-  border: "2px solid black",
+  // border: "2px solid black",
   padding: "5%",
   // margin: "10Px",
 };
@@ -40,21 +40,32 @@ const Experiences = () => {
             // container
             // spacing={}
             columns={{ xs: 4, sm: 8, md: 12 }}
-            sx={{ backgroundColor: "blue" }}
+            // sx={{ backgroundColor: "blue" }}
           >
-            <Grid xs={12} md={6} style={experienceCardStyle} spacing={2}>
+            <Grid xs={12} md={12} style={experienceCardStyle} spacing={2}>
               <Box style={{}}>
-                <Typography variant="h6">
+                <Typography variant="h6" sx={{ textAlign: "center" }}>
                   JUNIOR SOFTWAREENGINEER (November 2021 - Present)
                 </Typography>
                 {/* <Button variant="outlined">Find out More</Button> */}
               </Box>
-              <Typography>
+              <Typography sx={{ textAlign: "center" }}>
                 <WorkIcon style={styles.icon} size={12} />
                 BDEMR Solutions Corp.
               </Typography>
+              <Divider />
+              <Typography
+                sx={{
+                  textAlign: "center",
+                  marginTop: "10px",
+                  fontWeight: "bold",
+                }}
+              >
+                PROJECTS
+              </Typography>
               <Box style={{ textAlign: "justify" }}>
-                <p>
+                <p></p>
+                {/* <p>
                   Building BDEMR TeleDoc App with React Native. Key Features
                   includes appoinment booking, payment from wallet wallet,
                   Medicine and Vital tracking. Role Based access features.
@@ -65,18 +76,28 @@ const Experiences = () => {
                   ReactJs, Gmail API, emailjs-imapclient, NodeJs and MongoDB{" "}
                   <br /> Worked on fixing bugs and improving BDEMR Patient App
                   and Doctor App build with Polymer and Coffeescript
-                </p>
+                </p> */}
               </Box>
-              <DetailedCard />
+              <Box
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "5%",
+                }}
+              >
+                <DetailedCard />
+                <DetailedCard />
+                <DetailedCard />
+              </Box>
             </Grid>
-            <Grid xs={12} sm={4} md={6} style={experienceCardStyle} spacing={2}>
-              <Box style={styles.flexCenterSpcaeBetween}>
-                <Typography variant="h6">
+            <Grid md={12} style={experienceCardStyle} spacing={2}>
+              <Box style={styles.flexCenter}>
+                <Typography variant="h6" style={{ textAlign: "center" }}>
                   STUDENT TUTOR OF MATHEMATICS ( 2020 )
                 </Typography>
                 {/* <Button variant="outlined">Find out More</Button> */}
               </Box>
-              <Typography>
+              <Typography style={{ textAlign: "center" }}>
                 <WorkIcon style={styles.icon} size={12} />
                 Brac University
               </Typography>
