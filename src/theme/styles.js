@@ -36,6 +36,10 @@ export const styles = {
     margin: "10px",
     elevation: "0",
   },
+  skillCard: {
+    margin: "5px",
+    elevation: "0",
+  },
   icon: {
     margin: "10px 0",
     marginRight: "10px",

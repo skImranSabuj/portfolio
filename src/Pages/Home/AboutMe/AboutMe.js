@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  CardHeader,
   Container,
   Divider,
   Grid,
@@ -28,6 +29,9 @@ import SectionTitle from "./SectionTitle";
 import bdemrbanner from "../../../static/images/exp-bdemr.png";
 import bdemrLogo from "../../../static/images/logo_bdemr.png";
 import AppButton from "../../../components/components/AppButton";
+import Skills from "../../../components/Skills/Skills";
+import Experience from "../../../components/Experience.js/Experience";
+import Biography from "../../../components/Biography/Biography";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -176,11 +180,10 @@ const AboutMe = () => {
   const Education = () => {
     return (
       <Box
-        sx={
-          {
-            // border: "1px solid black"
-          }
-        }
+        sx={{
+          // border: "1px solid black"
+          padding: "0 0.8rem",
+        }}
       >
         <Box sx={{ marginBottom: "2rem" }}>
           <SectionTitle title="Academics" />
@@ -200,17 +203,19 @@ const AboutMe = () => {
                 }}
                 sx={{
                   elevation: 0,
-                  boxShadow: "5px 15px 15px 5px grey",
-                  backgroundImage: `url(${item.img})`,
+                  // boxShadow: "5px 15px 15px 5px grey",
+                  // backgroundImage: `url(${item.img})`,
                   backgroundSize: "cover",
-                  backgroundColor: "#333333",
+                  // backgroundColor: "#333333",
                 }}
               >
                 <Box
-                  sx={{
-                    backgroundColor: "rgba(0,0,0,0.6)",
-                    background: `linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.7) 35%)`,
-                  }}
+                  sx={
+                    {
+                      // backgroundColor: "rgba(0,0,0,0.6)",
+                      // background: `linear-gradient(-45deg, rgb(225, 234, 235, 0.8) 0%, rgba(235, 244, 245, 0.8) 35%)`,
+                    }
+                  }
                 >
                   <Box
                     style={{
@@ -223,7 +228,7 @@ const AboutMe = () => {
                       style={{
                         textAlign: "left",
                         padding: "5px 20px",
-                        color: "white",
+                        // color: "white",
                       }}
                     >
                       <SchoolIcon style={{ marginRight: "10px" }} />{" "}
@@ -234,7 +239,7 @@ const AboutMe = () => {
                     style={{
                       textAlign: "left",
                       padding: "20px",
-                      color: "white",
+                      // color: "white",
                     }}
                   >
                     <Typography variant="body1">
@@ -259,256 +264,6 @@ const AboutMe = () => {
     );
   };
 
-  const ExperienceOld = () => {
-    return (
-      <Box sx={{ flexGrow: 1, textAlign: "left" }}>
-        <Box>
-          <SectionTitle title="Experience" />
-        </Box>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
-          <Grid
-            item
-            xs={12}
-            // style={{ border: "2px solid black" }}
-          >
-            {/* <Typography variant="h6">
-              JUNIOR SOFTWAREENGINEER (November 2021 - Present)
-            </Typography> */}
-            <Box style={{}}>
-              <Typography variant="h6">
-                JUNIOR SOFTWAREENGINEER (November 2021 - Present)
-              </Typography>
-              {/* <Button variant="outlined">Find out More</Button> */}
-            </Box>
-            <Typography>
-              <WorkIcon style={styles.icon} size={12} />
-              BDEMR Solutions Corp.
-            </Typography>
-            <ul style={{ textAlign: "justify" }}>
-              <li>
-                Building BDEMR TeleDoc App with React Native. Key Features
-                includes appoinment booking, payment from wallet wallet,
-                Medicine and Vital tracking. Role Based access features.
-                Organization and user management.
-              </li>
-              <li>
-                Developed an Email Marketing Web App named as BDEMR Email
-                Autoresponder That automatically responds to emials with user
-                selected templates and delay also can broadcast emails. Mainly
-                build with ReactJs, Gmail API, emailjs-imapclient, NodeJs and
-                MongoDB
-              </li>
-              <li>
-                Worked on fixing bugs and improving BDEMR Patient App and Doctor
-                App build with Polymer and Coffeescript
-              </li>
-            </ul>
-            <Button
-              variant="outlined"
-              color="success"
-              endIcon={<ChevronRightIcon />}
-            >
-              <NavLink
-                to="experiences"
-                style={{ textDecoration: "none", color: "green" }}
-                //   style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              >
-                Contributions
-              </NavLink>
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={4} md={12}>
-            <Box style={styles.flexCenterSpcaeBetween}>
-              <Typography variant="h6">
-                STUDENT TUTOR OF MATHEMATICS ( 2020 )
-              </Typography>
-              {/* <Button variant="outlined">Find out More</Button> */}
-            </Box>
-            <Typography>
-              <WorkIcon style={styles.icon} size={12} />
-              Brac University
-            </Typography>
-            <Typography>
-              <ul>
-                <li>
-                  Worked as a student tutor at Brac University's Mathematics and
-                  Natural Sciences Department, where I assisted students with
-                  mathematics courses and faculties with script checking.
-                </li>
-              </ul>
-            </Typography>
-            <Button
-              variant="outlined"
-              color="success"
-              endIcon={<ChevronRightIcon />}
-            >
-              Find out More
-            </Button>
-          </Grid>
-        </Grid>
-      </Box>
-    );
-  };
-  const Experience = () => {
-    return (
-      <Box
-        sx={{
-          flexGrow: 1,
-          textAlign: "left",
-          // border: "1px solid black"
-        }}
-      >
-        <Box sx={{ marginBottom: "2rem" }}>
-          <SectionTitle title="Experience" />
-        </Box>
-        <Grid
-          container
-          // spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-          sx={{
-            backroundColor: "lightgrey",
-            // border: "1px solid black",
-            borderRadius: "5px",
-            padding: "10px",
-            // margin: "20px",
-            boxShadow: "2px 2px 5px 2px grey",
-          }}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            md={4}
-            sx={{ elevation: 2, backgroundColor: "grey" }}
-          >
-            <Box sx={{ padding: "0.5rem" }}>
-              <img
-                src={bdemrbanner}
-                alt=""
-                style={{
-                  // marginLeft: "50px",
-                  // marginTop: "30px",
-                  width: "100%",
-                  height: "auto",
-                  // margin: "10px auto",
-                  borderRadius: "2%",
-                  // background: "#EBF4F5",
-                }}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            md={4}
-            sx={{
-              elevation: 2,
-              backgroundColor: "grey",
-              borderRight: "1px solid lightgrey",
-            }}
-          >
-            <Box
-              sx={{
-                padding: "0.5rem",
-              }}
-            >
-              <Typography variant="h6">
-                JUNIOR SOFTWAREENGINEER (November 2021 - Present)
-              </Typography>
-              <ul
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  // backgroundColor: "blue",
-                  // height: "100vh",
-                }}
-              >
-                <li>
-                  BDEMR TeleDoc App for telemedicine serveice [React Native]
-                </li>
-                <li>
-                  BDEMR Email Auto responder for email marketing [React ,
-                  NodeJs]
-                </li>
-                <li>
-                  BDEMR Email Clinic App for hospital and diagnsotics [Polymer,
-                  Coffeescript]
-                </li>
-              </ul>
-            </Box>
-            {/* <Divider orientation="vertical" flexItem /> */}
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            md={4}
-            sx={{ elevation: 2, backgroundColor: "grey" }}
-          >
-            <Box sx={{ padding: "0.5rem" }}>
-              <Box style={styles.flexCenter}>
-                <img
-                  src={bdemrLogo}
-                  alt=""
-                  style={{
-                    // marginLeft: "50px",
-                    // marginTop: "30px",
-                    width: "100px",
-                    height: "100px",
-                    // margin: "10px auto",
-                    borderRadius: "2%",
-                    // background: "#EBF4F5",
-                  }}
-                />
-              </Box>
-              <Box style={{ textAlign: "center" }}>
-                <h6>BDEMR Solution Corp.</h6>
-                <p>From Novemebr 2021 to Present</p>
-                <Box sx={{ padding: "1rem" }}>
-                  <AppButton
-                    title="Explore More"
-                    handleOnClick={() => console.log("clicked")}
-                  />
-                </Box>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-    );
-  };
-
-  const Biography = () => {
-    return (
-      <Box>
-        <Typography
-          variant="h4"
-          sx={{
-            // color: 'gray',
-            fontWeight: "500",
-            fontSize: 28,
-            marginBottom: "15px",
-          }}
-        >
-          {" "}
-          &#60; About <span className="default-color">Me</span> /&#62;{" "}
-        </Typography>
-        <Typography>
-          I am a Computer Science graduate currently working as a Jr. Software
-          Engineer who is passionate about programming, development and enjoys
-          learning/working with existing or new technologies. Moreover, I can
-          learn quickly, and adopt with new techs and environments with
-          dedication.
-        </Typography>
-      </Box>
-    );
-  };
   return (
     <Container
       style={{
@@ -519,88 +274,10 @@ const AboutMe = () => {
         color: "black",
       }}
     >
-      <Box sx={{ bgcolor: "", width: "100%" }}>
-        {/* <AppBar position="static" className="" style={{ background: "white" }}> */}
-        <Box
-          style={{ ...styles.flexCenter }}
-          sx={{
-            flexGrow: 1,
-            // maxWidth: { xs: 320, sm: 480 },
-            bgcolor: "background.paper",
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="secondary"
-            textColor="inherit"
-            variant="scrollable"
-            // scrollButtons
-            aria-label="full width tabs example"
-            centered
-            // style={{ backGround: "white" }}
-            className="default-border about-me-tabs"
-            sx={{
-              [`& .${tabsClasses.scrollButtons}`]: {
-                "&.Mui-disabled": { opacity: 0.3 },
-              },
-              p: 2,
-            }}
-          >
-            <Tab label="BIOGRAPHY" {...a11yProps(0)} />
-            <Tab label="EDUCATION" {...a11yProps(1)} />
-            <Tab label="EXPERIENCE" {...a11yProps(2)} />
-            <Tab label="SKILLS" {...a11yProps(3)} />
-            <Tab label="CERTIFICATES" {...a11yProps(4)} />
-          </Tabs>
-        </Box>
-        {/* </AppBar> */}
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={value}
-          onChangeIndex={handleChangeIndex}
-        >
-          <TabPanel value={value} index={0} dir={theme.direction}>
-            <Paper
-              sx={{ p: 5, m: 2 }}
-              style={styles.tabItem}
-              xs={12}
-              sm={4}
-              md={4}
-            >
-              <Biography />
-            </Paper>
-          </TabPanel>
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            <Paper
-              sx={{ p: 5, m: 2 }}
-              style={styles.tabItem}
-              xs={12}
-              sm={4}
-              md={4}
-            >
-              <Education />
-            </Paper>
-          </TabPanel>
-          <TabPanel value={value} index={2} dir={theme.direction}>
-            <Paper style={styles.tabItem}>
-              <Experience />
-            </Paper>
-          </TabPanel>
-          <TabPanel value={value} index={3} dir={theme.direction}>
-            <Paper style={styles.tabItem}>
-              <Education />
-            </Paper>
-          </TabPanel>
-          <TabPanel value={value} index={4} dir={theme.direction}>
-            <Paper style={styles.tabItem}>
-              <Education />
-            </Paper>
-          </TabPanel>
-        </SwipeableViews>
-      </Box>
+      <Biography />
       <Education />
       <Experience />
+      <Skills />
     </Container>
   );
 };

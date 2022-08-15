@@ -1,7 +1,8 @@
 .App {
   font-family: 'Abril Fatface', cursive;
   min-height: 100%;
-  font-family: Roboto;
+  font-family: 'Roboto';
+    font-family: 'Tahoma';
 }
 .default-color{
   color:#338F9A !important;
@@ -36,6 +37,17 @@
 
 .pad-10 {
   padding: 0 10%;
+}
+.skillCard:hover {
+  box-shadow: 5px 5px 15px 5px grey;
+}
+
+.skillCard img {
+  filter: grayscale(30%);
+}
+
+.skillCard:hover img {
+  filter: grayscale(0%);
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

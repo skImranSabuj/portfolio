@@ -7,10 +7,12 @@ const SectionTitle = ({ title = "Title" }) => {
       variant="h4"
       sx={{
         // color: 'gray',
-        fontWeight: "500",
         fontSize: 28,
-        margin: "15px 0",
         // backgroundColor: "red",
+        fontFamily: "Roboto Condensed,sans-serif",
+        textTransform: "uppercase",
+        fontWeight: "bold",
+        marginTop: "20px",
       }}
     >
       {" "}
