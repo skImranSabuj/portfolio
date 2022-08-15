@@ -114,9 +114,21 @@ const Experiences = () => {
               variant="outlined"
               color="success"
               endIcon={<ChevronRightIcon />}
-            >
+              >
               Find out More
             </Button> */}
+              <Box
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "5%",
+                }}
+              >
+                {/* https://i.ibb.co/VSBvGDz/practice-image.png */}
+                <DetailedCard />
+                <DetailedCard />
+                <DetailedCard />
+              </Box>
             </Grid>
           </Grid>
         </Box>

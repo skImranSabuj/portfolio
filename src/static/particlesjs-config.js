@@ -1,8 +1,8 @@
 export const nasaBG = {
-  // fullScreen: {
-  //   enable: true,
-  //   zIndex: -1,
-  // },
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
   particles: {
     number: {
       value: 160,

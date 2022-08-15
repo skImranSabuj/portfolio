@@ -2,8 +2,10 @@ import {
   Button,
   Card,
   Container,
+  Divider,
   Grid,
   Paper,
+  Stack,
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
@@ -22,6 +24,10 @@ import InsertInvitation from "@mui/icons-material/InsertInvitation";
 import SubjectIcon from "@mui/icons-material/Subject";
 import WorkIcon from "@mui/icons-material/Work";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import SectionTitle from "./SectionTitle";
+import bdemrbanner from "../../../static/images/exp-bdemr.png";
+import bdemrLogo from "../../../static/images/logo_bdemr.png";
+import AppButton from "../../../components/components/AppButton";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,12 +74,13 @@ const styles = {
   },
   tabItem: {
     backgroundColor: "#EBF4F5",
+    // backgroundColor: "#EB44F5",
     // height: "300px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     elevation: "5",
-    padding: "50px",
+    padding: "1em",
   },
   educationCard: {
     margin: "10px",
@@ -107,90 +114,157 @@ const AboutMe = () => {
     setValue(index);
   };
 
+  // const Education = () => {
+  //   return (
+  //     <Box sx={{}}>
+  //       <Typography
+  //         variant="h4"
+  //         sx={{
+  //           // color: 'gray',
+  //           fontWeight: "500",
+  //           fontSize: 28,
+  //           margin: "15px 0",
+  //           // backgroundColor: "red",
+  //         }}
+  //       >
+  //         {" "}
+  //         &#60; Academics /&#62;{" "}
+  //       </Typography>
+  //       <Box sx={{ flexGrow: 1 }}>
+  //         <Grid
+  //           container
+  //           spacing={{ xs: 2, md: 0 }}
+  //           columns={{ xs: 4, sm: 6, md: 12 }}
+  //           sx={{}}
+  //         >
+  //           {education.map((item, index) => (
+  //             <Grid xs={12} sm={6} md={4} key={index}>
+  //               <Card style={styles.educationCard} sx={{ elevation: 0 }}>
+  //                 <Box
+  //                   style={{
+  //                     borderBottom: "2px solid lightGray",
+  //                     paddingTop: "10px",
+  //                   }}
+  //                 >
+  //                   <h4>
+  //                     <SchoolIcon style={{ marginRight: "10px" }} />{" "}
+  //                     {item.degreeName}
+  //                   </h4>
+  //                 </Box>
+  //                 <Box style={{ textAlign: "left", padding: "20px" }}>
+  //                   <Typography variant="body1">
+  //                     <AccountBalanceIcon style={styles.icon} size={12} />{" "}
+  //                     {item.istitution}
+  //                   </Typography>
+  //                   <Typography variant="body1">
+  //                     <SubjectIcon style={styles.icon} size={12} />{" "}
+  //                     {item.subject}
+  //                   </Typography>
+  //                   <Typography variant="body1">
+  //                     <InsertInvitation style={styles.icon} size={12} />{" "}
+  //                     {item.passingYear}
+  //                   </Typography>
+  //                 </Box>
+  //               </Card>
+  //             </Grid>
+  //           ))}
+  //         </Grid>
+  //       </Box>
+  //     </Box>
+  //   );
+  // };
   const Education = () => {
     return (
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+      <Box
+        sx={
+          {
+            // border: "1px solid black"
+          }
+        }
       >
-        {education.map((item, index) => (
-          <Grid xs={12} sm={4} md={4} key={index}>
-            <Card style={styles.educationCard} sx={{ elevation: 0 }}>
-              <Box
+        <Box sx={{ marginBottom: "2rem" }}>
+          <SectionTitle title="Academics" />
+        </Box>
+        <Grid
+          container
+          // spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          // sx={{ border: "1px solid red" }}
+        >
+          {education.map((item, index) => (
+            <Grid xs={12} sm={4} md={4} key={index}>
+              <Card
                 style={{
-                  borderBottom: "2px solid lightGray",
-                  paddingTop: "10px",
+                  ...styles.educationCard,
+                  // backgroundImage: `url('../../../static/images/bracu.jpg')`,
+                }}
+                sx={{
+                  elevation: 0,
+                  boxShadow: "5px 15px 15px 5px grey",
+                  backgroundImage: `url(${item.img})`,
+                  backgroundSize: "cover",
+                  backgroundColor: "#333333",
                 }}
               >
-                <h4>
-                  <SchoolIcon style={{ marginRight: "10px" }} />{" "}
-                  {item.degreeName}
-                </h4>
-              </Box>
-              <Box style={{ textAlign: "left", padding: "20px" }}>
-                <Typography variant="body1">
-                  <AccountBalanceIcon style={styles.icon} size={12} />{" "}
-                  {item.istitution}
-                </Typography>
-                <Typography variant="body1">
-                  <SubjectIcon style={styles.icon} size={12} /> {item.subject}
-                </Typography>
-                <Typography variant="body1">
-                  <InsertInvitation style={styles.icon} size={12} />{" "}
-                  {item.passingYear}
-                </Typography>
-              </Box>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    );
-  };
-  const Skills = () => {
-    return (
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {education.map((item, index) => (
-          <Grid xs={12} sm={4} md={4} key={index}>
-            <Card style={styles.educationCard} sx={{ elevation: 0 }}>
-              <Box
-                style={{
-                  borderBottom: "2px solid lightGray",
-                  paddingTop: "10px",
-                }}
-              >
-                <h4>
-                  <SchoolIcon style={{ marginRight: "10px" }} />{" "}
-                  {item.degreeName}
-                </h4>
-              </Box>
-              <Box style={{ textAlign: "left", padding: "20px" }}>
-                <Typography variant="body1">
-                  <AccountBalanceIcon style={styles.icon} size={12} />{" "}
-                  {item.istitution}
-                </Typography>
-                <Typography variant="body1">
-                  <SubjectIcon style={styles.icon} size={12} /> {item.subject}
-                </Typography>
-                <Typography variant="body1">
-                  <InsertInvitation style={styles.icon} size={12} />{" "}
-                  {item.passingYear}
-                </Typography>
-              </Box>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+                <Box
+                  sx={{
+                    backgroundColor: "rgba(0,0,0,0.6)",
+                    background: `linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.7) 35%)`,
+                  }}
+                >
+                  <Box
+                    style={{
+                      borderBottom: "2px solid lightGray",
+                      paddingTop: "10px",
+                      textAlign: "left",
+                    }}
+                  >
+                    <h4
+                      style={{
+                        textAlign: "left",
+                        padding: "5px 20px",
+                        color: "white",
+                      }}
+                    >
+                      <SchoolIcon style={{ marginRight: "10px" }} />{" "}
+                      {item.degreeName}
+                    </h4>
+                  </Box>
+                  <Box
+                    style={{
+                      textAlign: "left",
+                      padding: "20px",
+                      color: "white",
+                    }}
+                  >
+                    <Typography variant="body1">
+                      <AccountBalanceIcon style={styles.icon} size={12} />{" "}
+                      {item.istitution}
+                    </Typography>
+                    <Typography variant="body1">
+                      <SubjectIcon style={styles.icon} size={12} />{" "}
+                      {item.subject}
+                    </Typography>
+                    <Typography variant="body1">
+                      <InsertInvitation style={styles.icon} size={12} />{" "}
+                      {item.passingYear}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     );
   };
 
-  const Experience = () => {
+  const ExperienceOld = () => {
     return (
       <Box sx={{ flexGrow: 1, textAlign: "left" }}>
+        <Box>
+          <SectionTitle title="Experience" />
+        </Box>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
@@ -279,6 +353,136 @@ const AboutMe = () => {
       </Box>
     );
   };
+  const Experience = () => {
+    return (
+      <Box
+        sx={{
+          flexGrow: 1,
+          textAlign: "left",
+          // border: "1px solid black"
+        }}
+      >
+        <Box sx={{ marginBottom: "2rem" }}>
+          <SectionTitle title="Experience" />
+        </Box>
+        <Grid
+          container
+          // spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          sx={{
+            backroundColor: "lightgrey",
+            // border: "1px solid black",
+            borderRadius: "5px",
+            padding: "10px",
+            // margin: "20px",
+            boxShadow: "2px 2px 5px 2px grey",
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={4}
+            sx={{ elevation: 2, backgroundColor: "grey" }}
+          >
+            <Box sx={{ padding: "0.5rem" }}>
+              <img
+                src={bdemrbanner}
+                alt=""
+                style={{
+                  // marginLeft: "50px",
+                  // marginTop: "30px",
+                  width: "100%",
+                  height: "auto",
+                  // margin: "10px auto",
+                  borderRadius: "2%",
+                  // background: "#EBF4F5",
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={4}
+            sx={{
+              elevation: 2,
+              backgroundColor: "grey",
+              borderRight: "1px solid lightgrey",
+            }}
+          >
+            <Box
+              sx={{
+                padding: "0.5rem",
+              }}
+            >
+              <Typography variant="h6">
+                JUNIOR SOFTWAREENGINEER (November 2021 - Present)
+              </Typography>
+              <ul
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  // backgroundColor: "blue",
+                  // height: "100vh",
+                }}
+              >
+                <li>
+                  BDEMR TeleDoc App for telemedicine serveice [React Native]
+                </li>
+                <li>
+                  BDEMR Email Auto responder for email marketing [React ,
+                  NodeJs]
+                </li>
+                <li>
+                  BDEMR Email Clinic App for hospital and diagnsotics [Polymer,
+                  Coffeescript]
+                </li>
+              </ul>
+            </Box>
+            {/* <Divider orientation="vertical" flexItem /> */}
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={4}
+            sx={{ elevation: 2, backgroundColor: "grey" }}
+          >
+            <Box sx={{ padding: "0.5rem" }}>
+              <Box style={styles.flexCenter}>
+                <img
+                  src={bdemrLogo}
+                  alt=""
+                  style={{
+                    // marginLeft: "50px",
+                    // marginTop: "30px",
+                    width: "100px",
+                    height: "100px",
+                    // margin: "10px auto",
+                    borderRadius: "2%",
+                    // background: "#EBF4F5",
+                  }}
+                />
+              </Box>
+              <Box style={{ textAlign: "center" }}>
+                <h6>BDEMR Solution Corp.</h6>
+                <p>From Novemebr 2021 to Present</p>
+                <Box sx={{ padding: "1rem" }}>
+                  <AppButton
+                    title="Explore More"
+                    handleOnClick={() => console.log("clicked")}
+                  />
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    );
+  };
 
   const Biography = () => {
     return (
@@ -315,20 +519,6 @@ const AboutMe = () => {
         color: "black",
       }}
     >
-      {/* <Typography
-        variant=""
-        sx={{
-          // color: 'gray',
-          fontWeight: "400",
-          fontSize: 14,
-        }}
-      >
-        I am a CSE gradute, passionate programmer, Working as a junior Software
-        Engineer at BDEMR Solution Corp. <br />{" "}
-        <span style={{ color: "goldenrod" }}></span>{" "}
-      </Typography> */}
-
-      {/* <Box sx={{ bgcolor: 'background.paper', width: "100%" }}> */}
       <Box sx={{ bgcolor: "", width: "100%" }}>
         {/* <AppBar position="static" className="" style={{ background: "white" }}> */}
         <Box
@@ -399,7 +589,7 @@ const AboutMe = () => {
           </TabPanel>
           <TabPanel value={value} index={3} dir={theme.direction}>
             <Paper style={styles.tabItem}>
-              <Skills />
+              <Education />
             </Paper>
           </TabPanel>
           <TabPanel value={value} index={4} dir={theme.direction}>
@@ -409,6 +599,8 @@ const AboutMe = () => {
           </TabPanel>
         </SwipeableViews>
       </Box>
+      <Education />
+      <Experience />
     </Container>
   );
 };

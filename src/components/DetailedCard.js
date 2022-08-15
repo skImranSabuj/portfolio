@@ -46,7 +46,7 @@ export default function DetailedCard({ project }) {
       sx={{
         // maxWidth: { xs: "90%", sm: "30%" },
         backgroundColor: "#F3F9FA",
-        elevation: 10,
+        boxShadow: "10px 10px 50px 5px grey",
       }}
       className="project-card"
     >
