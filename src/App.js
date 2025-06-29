@@ -1,20 +1,20 @@
 import React from "react";
-import './App.css';
-import AuthProvider from "./context/AuthProvider";
+import "./App.css";
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route,
   BrowserRouter,
   Routes,
   // Routes,
 } from "react-router-dom";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import Header from "./components/Header/Header";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
+// import Header from "./components/Header/Header";
 import Home from "./Pages/Home/Home/Home";
 import Experiences from "./Pages/Experiences/Experiences";
 
+import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
     <AuthProvider className="App">

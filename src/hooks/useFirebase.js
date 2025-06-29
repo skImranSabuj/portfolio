@@ -12,7 +12,7 @@ import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ name: "sabuj", age: 26 });
   const [isLoading, setIsLoading] = useState(true);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -34,18 +34,18 @@ const useFirebase = () => {
 
   // observe whether user auth state changed or not
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        getIdToken(user).then((idToken) =>
-          localStorage.setItem("idToken", idToken)
-        );
-      } else {
-        setUser({});
-      }
-      setIsLoading(false);
-    });
-    return () => unsubscribe;
+    // const unsubscribe = onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     setUser(user);
+    //     getIdToken(user).then((idToken) =>
+    //       localStorage.setItem("idToken", idToken)
+    //     );
+    //   } else {
+    //     setUser({});
+    //   }
+    //   setIsLoading(false);
+    // });
+    // return () => unsubscribe;
   }, []);
 
   return {

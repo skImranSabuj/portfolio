@@ -32,6 +32,8 @@ import AppButton from "../../../components/components/AppButton";
 import Skills from "../../../components/Skills/Skills";
 import Experience from "../../../components/Experience.js/Experience";
 import Biography from "../../../components/Biography/Biography";
+import Profiles from "../../../components/Profiles/Profiles";
+import Projects from "../../../components/Projects/Projects";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -274,10 +276,12 @@ const AboutMe = () => {
         color: "black",
       }}
     >
+      <Profiles />
       <Biography />
       <Education />
       <Experience />
       <Skills />
+      <Projects />
     </Container>
   );
 };

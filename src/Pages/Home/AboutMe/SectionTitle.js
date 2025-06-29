@@ -12,7 +12,7 @@ const SectionTitle = ({ title = "Title" }) => {
         fontFamily: "Roboto Condensed,sans-serif",
         textTransform: "uppercase",
         fontWeight: "bold",
-        marginTop: "20px",
+        marginTop: "40px",
       }}
     >
       {" "}
