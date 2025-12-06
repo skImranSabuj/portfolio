@@ -100,85 +100,8 @@ const styles = {
 };
 
 const AboutMe = () => {
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-  useEffect(() => {
-    // setInterval(changeTab, 5000);
-  }, []);
 
-  function changeTab() {
-    if (value === 4) setValue(0);
-    else {
-      setValue(value + 1);
-    }
-  }
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
-
-  // const Education = () => {
-  //   return (
-  //     <Box sx={{}}>
-  //       <Typography
-  //         variant="h4"
-  //         sx={{
-  //           // color: 'gray',
-  //           fontWeight: "500",
-  //           fontSize: 28,
-  //           margin: "15px 0",
-  //           // backgroundColor: "red",
-  //         }}
-  //       >
-  //         {" "}
-  //         &#60; Academics /&#62;{" "}
-  //       </Typography>
-  //       <Box sx={{ flexGrow: 1 }}>
-  //         <Grid
-  //           container
-  //           spacing={{ xs: 2, md: 0 }}
-  //           columns={{ xs: 4, sm: 6, md: 12 }}
-  //           sx={{}}
-  //         >
-  //           {education.map((item, index) => (
-  //             <Grid xs={12} sm={6} md={4} key={index}>
-  //               <Card style={styles.educationCard} sx={{ elevation: 0 }}>
-  //                 <Box
-  //                   style={{
-  //                     borderBottom: "2px solid lightGray",
-  //                     paddingTop: "10px",
-  //                   }}
-  //                 >
-  //                   <h4>
-  //                     <SchoolIcon style={{ marginRight: "10px" }} />{" "}
-  //                     {item.degreeName}
-  //                   </h4>
-  //                 </Box>
-  //                 <Box style={{ textAlign: "left", padding: "20px" }}>
-  //                   <Typography variant="body1">
-  //                     <AccountBalanceIcon style={styles.icon} size={12} />{" "}
-  //                     {item.istitution}
-  //                   </Typography>
-  //                   <Typography variant="body1">
-  //                     <SubjectIcon style={styles.icon} size={12} />{" "}
-  //                     {item.subject}
-  //                   </Typography>
-  //                   <Typography variant="body1">
-  //                     <InsertInvitation style={styles.icon} size={12} />{" "}
-  //                     {item.passingYear}
-  //                   </Typography>
-  //                 </Box>
-  //               </Card>
-  //             </Grid>
-  //           ))}
-  //         </Grid>
-  //       </Box>
-  //     </Box>
-  //   );
-  // };
   const Education = () => {
     return (
       <Box
@@ -270,7 +193,6 @@ const AboutMe = () => {
     <Container
       style={{
         textAlign: "center",
-        // marginTop: "-300px",
         borderRadius: "15px",
         padding: "15px 0",
         color: "black",
