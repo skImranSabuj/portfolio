@@ -6,7 +6,7 @@ export const projects = [
       "Hotel reservation web app built with React.js for customers and a hotel manager dashboard built with Vue.js.",
     tech: ["React.js", "Vue.js", "REST API", "Tailwind CSS"],
     image: "https://res.cloudinary.com/dpjxzalpe/image/upload/v1763581545/Screenshot_2025-11-19_132827_xu7sbv.png",
-    liveUrl: "https://example.com/skyticket",
+    liveUrl: "https://skyticket.jp/hotel/",
   },
   {
     title: "STUDENT UPLIFT",
@@ -15,7 +15,7 @@ export const projects = [
       "Cross-platform mobile and web app with chat, video calling, and program management features.",
     tech: ["React Native", "React", "WebRTC", "Firebase"],
     image: "https://res.cloudinary.com/dpjxzalpe/image/upload/v1763581678/studentuplift_zxdkfb.webp",
-    liveUrl: "https://example.com/student-uplift",
+    liveUrl: "https://docs.google.com/document/d/1OUJhqr-93o8T4GrKBabnzIza99NCRaQlTlKqdv35-EQ/edit?tab=t.0",
   },
   {
     title: "DIGITAL PHARMACY",
