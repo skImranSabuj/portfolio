@@ -1,8 +1,17 @@
-.banner-Container{
-    /* height: 750px; */
-        background-color: rgb(0, 0, 0);
-        background-color: rgb(74, 74, 74);
-            /* background-image: url("../../../images/background.webp"); */
-        background-size: cover;
-        /* background-o */
+.banner-Container {
+  position: relative;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark gradient */
+  color: white;
+  padding: 40px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.banner-Container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 255, 0, 0.05); /* subtle green glow overlay */
+  pointer-events: none;
+  z-index: -1;
 }

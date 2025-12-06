@@ -1,116 +1,77 @@
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import avatarImage from "../../../static/images/profile1.png";
+import React from "react";
 import TextLoop from "react-text-loop";
-import bannerImg from "../../../static/images/profile image.jpg";
-import AnimatedText from "react-animated-text-content";
-// import bannerImg from "../../../static/images/banner-image.png";
 import "./Banner.css";
 import { styles } from "../../../theme/styles";
 import ProfileImage from "../../../components/ProfileImage/ProfileImage";
 import ParticlesInit from "../../../components/ParticlesInit/ParticlesInit";
-const Banner = () => {
-  let professionString = "A Passionate Software Engineer";
-  const [profession, setProfession] = useState(
-    "A Passionate Software Engineer"
-  );
-  useEffect(() => {
-    setInterval(changeProfession, 1000);
-  }, []);
 
-  function changeProfession() {
-    if (profession === professionString) {
-    }
-  }
+const Banner = () => {
   return (
     <Box className="banner-Container">
       <ParticlesInit />
       <Container maxWidth="lg">
         <Box sx={{ flexGrow: 1, py: 1 }}>
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 6, sm: 6, md: 12 }}
-          >
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 6, sm: 6, md: 12 }}>
             <Grid item xs={12} sm={6} md={4} style={styles.flexCenter}>
-              {/* <Box>
-                <img
-                  src={bannerImg}
-                  alt=""
-                  style={{
-                    // marginLeft: "50px",
-                    // marginTop: "30px",
-                    margin: "10px auto",
-                    borderRadius: "50%",
-                    background: "#EBF4F5",
-                    border: "5px solid #338F9A",
-                  }}
-                  className="banner-img"
-                />
-              </Box> */}
               <ProfileImage size="200" />
             </Grid>
             <Grid item xs={12} sm={6} md={8} sx={styles.flexLeft}>
-              <Box style={{}}>
-                <Typography variant="h6" color="light" sx={{ color: "white" }}>
-                  Hello! I'm
-                </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: 36,
-                    color: "white",
-                  }}
-                >
-                  Khaja Sheikh Imran Sabuj
-                </Typography>
+              <Box>
+            <Typography variant="h6" sx={{ color: "#a5f3fc" }}> {/* cyan-200 */}
+              Hello! I'm
+            </Typography>
 
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "gray",
-                    fontWeight: "600",
-                    fontSize: 24,
-                  }}
-                >
-                  <TextLoop
-                    children={[
-                      "A Passionate Programmer",
-                      "Software Engineer",
-                      "Keen Learner",
-                    ]}
-                  />
-                </Typography>
-                {/* <AnimatedText
-                  type="words" // animate words or chars
-                  animation={{
-                    x: "200px",
-                    y: "-20px",
-                    scale: 1.1,
-                    ease: "ease-in-out",
-                  }}
-                  animationType="float"
-                  interval={0.06}
-                  duration={0.8}
-                  tag="p"
-                  className="animated-paragraph"
-                  includeWhiteSpaces
-                  threshold={1}
-                  rootMargin="20%"
-                >
-                  {professionString}
-                </AnimatedText> */}
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: "bold",
+                fontSize: 36,
+                color: "#ffffff", // pure white
+                textShadow: "0 0 8px rgba(0,255,0,0.3)", // subtle green glow
+              }}
+            >
+              Khaja Sheikh Imran Sabuj
+            </Typography>
 
+<Typography
+  variant="h6"
+  sx={{
+    color: "#81e6d9", // teal-300
+    fontWeight: 600,
+    fontSize: 24,
+    mt: 1,
+    textShadow: "0 0 6px rgba(0,255,0,0.2)",
+  }}
+>
+  <TextLoop
+    children={[
+      "A Passionate Programmer",
+      "Software Engineer",
+      "Keen Learner",
+    ]}
+  />
+</Typography>
                 <Button
                   variant="contained"
-                  style={{ backgroundColor: "", borderRadius: "25px" }}
-                  className="default-bg"
+                  sx={{
+                    mt: 3,
+                    borderRadius: "25px",
+                    backgroundImage: "linear-gradient(90deg, #616161, #9e9e9e)",
+                    color: "white",
+                    px: 4,
+                    py: 1,
+                    fontWeight: 600,
+                    textTransform: "none",
+                    "&:hover": {
+                      backgroundImage: "linear-gradient(90deg, #424242, #757575)",
+                    },
+                  }}
                 >
                   <a
-                    href="/somefile.txt"
+                    href="/KHAJA_SHEIKH_IMRAN_SABUJ_FE_4.pdf"
                     download
-                    style={{ textDecoration: "none", color: "white" }}
+                    style={{ textDecoration: "none", color: "inherit" }}
                   >
                     Download CV
                   </a>
@@ -119,12 +80,6 @@ const Banner = () => {
             </Grid>
           </Grid>
         </Box>
-        {/* <img src={avatarImage} alt="" style={{
-                height: "100px", width: "100px", marginTop: "-50px", marginLeft: "-150px"
-            }} />
-            <h2 style={{
-                marginTop: "-40px", textTransform: "uppercase"
-            }}>Khaja Sheikh Imran Sabuj</h2> */}
       </Container>
     </Box>
   );
