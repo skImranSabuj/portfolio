@@ -7,15 +7,15 @@ import ParticlesInit from "../../../components/ParticlesInit/ParticlesInit";
 
 const Banner = () => {
   return (
-    <Box className="banner-Container" sx={{overflow:"hidden"}}>
+    <Box className="banner-Container" sx={{ overflow: "hidden" }}>
       <Box
         sx={{
           position: "absolute",
-          inset: 0,          // fills the banner only
+          inset: 0, // fills the banner only
           zIndex: 0,
         }}
       >
-        <ParticlesInit />
+        {/* <ParticlesInit /> */}
       </Box>
 
       <Container maxWidth="lg">
@@ -50,7 +50,13 @@ const Banner = () => {
 
             {/* Text Section */}
             <Grid item xs={12} sm={6} md={8} sx={styles.flexLeft}>
-              <Box sx={{flex:1,textAlign: { xs: "center", md: "start" }, mx:"auto"}}>
+              <Box
+                sx={{
+                  flex: 1,
+                  textAlign: { xs: "center", md: "start" },
+                  mx: "auto",
+                }}
+              >
                 <Typography
                   variant="h6"
                   sx={{ color: "#a5f3fc", fontSize: { xs: 16, md: 20 } }}
@@ -93,7 +99,7 @@ const Banner = () => {
                   variant="contained"
                   sx={{
                     mt: 3,
-                    border:"2px solid #0f0f0fce",
+                    border: "2px solid #0f0f0fce",
                     borderRadius: "25px",
                     backgroundImage: "linear-gradient(90deg, #00ff99, #00cc66)",
                     color: "#0f0f0f",

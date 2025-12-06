@@ -1,12 +1,24 @@
 .banner-Container {
   position: relative;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark gradient */
+  background: linear-gradient(
+    to bottom right,
+    #000000 0%,
+    #0b1410 10%,
+    #101a16 20%,
+    #13211b 30%,
+    #16211d 40%,
+    #1a2b22 50%,
+    #1f3d2f 60%,
+    #255342 70%,
+    #2f6b4a 80%,
+    #5fa383 90%,
+    #a8d5c2 95%,
+    #ffffff 100%
+  );
   color: white;
-  padding: 40px 0;
   overflow: hidden;
   z-index: 1;
 }
-
 .banner-Container::before {
   content: "";
   position: absolute;

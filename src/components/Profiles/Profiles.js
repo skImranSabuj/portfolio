@@ -37,40 +37,40 @@ const Profiles = () => {
 
   return (
     <Box>
-      <Box sx={{ marginBottom: "2rem" }}>
+      <Box sx={{ marginBottom: "2rem", marginTop: 5 }}>
         <SectionTitle title="Profiles" />
       </Box>
 
       <Box sx={{ ...styles.flexCenter, flexWrap: "wrap", gap: "1.5rem" }}>
         {profileList.map((item, index) => (
-          <Card
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
             key={index}
-            sx={{
-              width: 120,
-              padding: 2,
-              textAlign: "center",
-              borderRadius: "1rem",
-              background: "linear-gradient(145deg, #f0f0f3, #cacaca)",
-              boxShadow: "5px 5px 15px #bebebe, -5px -5px 15px #ffffff",
-              transition: "all 0.3s ease-in-out",
-              "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: "4px 4px 10px #bbb, -4px -4px 10px #fff",
-              },
-            }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
+            <Card
+              sx={{
+                width: 120,
+                padding: 2,
+                textAlign: "center",
+                borderRadius: "1rem",
+                background: "linear-gradient(145deg, #f0f0f3, #cacaca)",
+                boxShadow: "5px 5px 15px #bebebe, -5px -5px 15px #ffffff",
+                transition: "all 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "4px 4px 10px #bbb, -4px -4px 10px #fff",
+                },
+              }}
             >
               <Typography variant="h4" component="div" gutterBottom>
                 <FontAwesomeIcon icon={item.icon} />
               </Typography>
               <Typography variant="body2">{item.name}</Typography>
-            </a>
-          </Card>
+            </Card>
+          </a>
         ))}
       </Box>
     </Box>

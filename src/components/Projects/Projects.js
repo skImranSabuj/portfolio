@@ -32,8 +32,17 @@ export default function Projects() {
                   p: 3,
                   borderRadius: 3,
                   position: "relative",
-                  background:
-                    "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+                  background: `linear-gradient(
+                                  to bottom right,
+                                  #000000 0%,
+                                  #0d1a13 20%,
+                                  #163024 40%,
+                                  #1f4633 60%,
+                                  #2f6b4a 80%,
+                                  #e8f5f0 95%,
+                                  #ffffff 100%
+                                )`,
+
                   color: "#fff",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
                   overflow: "hidden",
@@ -120,7 +129,7 @@ export default function Projects() {
                     </Typography>
                     {/* Visit Button at bottom */}
                     {project.liveUrl && (
-                      <Box sx={{ textAlign: "center" }}>
+                      <Box sx={{ mt: "auto", textAlign: "center" }}>
                         <Button
                           variant="contained"
                           href={project.liveUrl}
