@@ -41,36 +41,52 @@ const Profiles = () => {
         <SectionTitle title="Profiles" />
       </Box>
 
-      <Box sx={{ ...styles.flexCenter, flexWrap: "wrap", gap: "1.5rem" }}>
+      {/* Responsive flex container */}
+      <Box
+        sx={{
+          ...styles.flexCenter,
+          flexWrap: "wrap",
+          gap: "1.5rem",
+          padding: "1rem",
+          justifyContent: "center",
+        }}
+      >
         {profileList.map((item, index) => (
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noreferrer"
+          <Card
             key={index}
-            style={{ textDecoration: "none", color: "inherit" }}
+            sx={{
+              // width: { sm: "120px", md: "140px" }, // responsive widths
+              // height: { sm: "120px", md: "140px" }, // responsive widths
+              padding: 2,
+              width: "120px",
+              textAlign: "center",
+              borderRadius: "1rem",
+              background: "linear-gradient(145deg, #163024, #2f6b4a, #ffffff)", // matches banner/project card
+              border: "2px solid #2f6b4a", // green border
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                transform: "translateY(-4px)",
+                boxShadow: "0 6px 16px rgba(0,0,0,0.25)",
+                borderColor: "#4caf50", // brighter green on hover
+              },
+            }}
           >
-            <Card
-              sx={{
-                width: 120,
-                padding: 2,
-                textAlign: "center",
-                borderRadius: "1rem",
-                background: "linear-gradient(145deg, #f0f0f3, #cacaca)",
-                boxShadow: "5px 5px 15px #bebebe, -5px -5px 15px #ffffff",
-                transition: "all 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "translateY(-4px)",
-                  boxShadow: "4px 4px 10px #bbb, -4px -4px 10px #fff",
-                },
-              }}
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              key={index}
+              style={{ textDecoration: "none", color: "inherit" }}
             >
               <Typography variant="h4" component="div" gutterBottom>
-                <FontAwesomeIcon icon={item.icon} />
+                <FontAwesomeIcon icon={item.icon} color="#ffffff" />
               </Typography>
-              <Typography variant="body2">{item.name}</Typography>
-            </Card>
-          </a>
+              <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                {item.name}
+              </Typography>
+            </a>
+          </Card>
         ))}
       </Box>
     </Box>

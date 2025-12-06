@@ -40,13 +40,14 @@ const Biography = () => {
         sx={{
           padding: "1.5rem",
           borderRadius: "1.25rem",
-          background: "linear-gradient(145deg, #f0f0f3, #e0e0e0)",
+          background: "linear-gradient(145deg, #EBF4DD, #ffffff)",
           boxShadow: "8px 8px 20px #c6c6c6, -8px -8px 20px #ffffff",
-          border: "1px solid #fff",
-          transition: "all 0.3s ease",
+          border: "2px solid #2f6b4a", // green border
+          transition: "all 0.3s ease-in-out",
           "&:hover": {
-            boxShadow: "5px 5px 12px #ccc, -5px -5px 12px #fff",
-            transform: "translateY(-3px)",
+            transform: "translateY(-4px)",
+            boxShadow: "0 6px 16px rgba(0,0,0,0.25)",
+            borderColor: "#4caf50", // brighter green on hover
           },
         }}
       >
