@@ -7,8 +7,17 @@ import ParticlesInit from "../../../components/ParticlesInit/ParticlesInit";
 
 const Banner = () => {
   return (
-    <Box className="banner-Container">
-      <ParticlesInit />
+    <Box className="banner-Container" sx={{overflow:"hidden"}}>
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,          // fills the banner only
+          zIndex: 0,
+        }}
+      >
+        <ParticlesInit />
+      </Box>
+
       <Container maxWidth="lg">
         <Box sx={{ flexGrow: 1, py: { xs: 4, md: 8 } }}>
           <Grid
@@ -27,8 +36,8 @@ const Banner = () => {
                     width: 220,
                     height: 220,
                     borderRadius: "50%",
-                    background:
-                      "radial-gradient(circle, rgba(0,255,0,0.2) 0%, transparent 70%)",
+                    // background:
+                    //   "radial-gradient(circle, rgba(0,255,0,0.2) 0%, transparent 70%)",
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",

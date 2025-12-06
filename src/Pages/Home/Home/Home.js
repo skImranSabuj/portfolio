@@ -1,16 +1,13 @@
-import React from 'react';
-import ParticlesInit from "../../../components/ParticlesInit/ParticlesInit";
+import { Box } from "@mui/material";
 import AboutMe from "../AboutMe/AboutMe";
 import Banner from "../Banner/Banner";
 
 const Home = () => {
   return (
-    <div>
-      
+    <Box>
       <Banner></Banner>
       <AboutMe></AboutMe>
-      {/* <h2>This is home</h2> */}
-    </div>
+    </Box>
   );
 };
 

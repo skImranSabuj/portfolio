@@ -32,10 +32,15 @@ export default function Projects() {
                   p: 3,
                   borderRadius: 3,
                   position: "relative",
-                  background: "linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                  background:
+                    "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+                  color: "#fff",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
                   overflow: "hidden",
                   transition: "transform 0.3s ease",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
                   "&:hover": {
                     transform: "translateY(-4px)",
                     boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
@@ -48,7 +53,8 @@ export default function Projects() {
                     right: -2,
                     bottom: -2,
                     zIndex: 0,
-                    background: "linear-gradient(270deg, #1976d2, #42a5f5, #1976d2)",
+                    background:
+                      "linear-gradient(270deg, #1976d2, #42a5f5, #1976d2)",
                     backgroundSize: "600% 600%",
                     animation: "borderGlow 6s linear infinite",
                     borderRadius: 3,
@@ -66,44 +72,8 @@ export default function Projects() {
                   },
                 }}
               >
-                {project.liveUrl && (
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 16,
-                      right: 16,
-                      zIndex: 3,
-                    }}
-                  >
-                    <Button
-                      variant="contained"
-                      size="small"
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        backgroundImage: "linear-gradient(90deg, #757575 0%, #bdbdbd 100%)",
-                        color: "#fff",
-                        fontWeight: 600,
-                        textTransform: "none",
-                        px: 2.5,
-                        py: 0.5,
-                        borderRadius: "8px",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                        "&:hover": {
-                          backgroundImage: "linear-gradient(90deg, #616161 0%, #9e9e9e 100%)",
-                          color: "#ffffffc9",
-                        },
-                      }}
-                    >
-                      Visit Site
-                    </Button>
-
-                  </Box>
-                )}
-
                 {/* Optional Image */}
-                  {project.image && (
+                {project.image && (
                   <Box
                     component="img"
                     src={project.image}
@@ -114,7 +84,7 @@ export default function Projects() {
                       objectFit: "cover",
                       borderRadius: 2,
                       mb: 2,
-                      boxShadow: 1,
+                      boxShadow: "0 0 12px rgba(0,255,0,0.1)",
                       zIndex: 2,
                       position: "relative",
                       transition: "transform 0.4s ease",
@@ -126,27 +96,88 @@ export default function Projects() {
                 )}
 
                 {/* Project Info */}
-                <Box sx={{ position: "relative", zIndex: 2 }}>
-                  <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
+                <Box
+                  sx={{
+                    position: "relative",
+                    zIndex: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    flexGrow: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      sx={{ fontWeight: "bold", mb: 1, color: "#a5f3fc" }}
+                    >
+                      {project.title}
+                    </Typography>
+                    {/* Visit Button at bottom */}
+                    {project.liveUrl && (
+                      <Box sx={{ textAlign: "center" }}>
+                        <Button
+                          variant="contained"
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            backgroundImage:
+                              "linear-gradient(90deg, #00ff99, #00cc66)",
+                            color: "#0f0f0f",
+                            fontWeight: 600,
+                            textTransform: "none",
+                            px: { xs: 2, sm: 3 },
+                            py: { xs: 0.5, sm: 1 },
+                            fontSize: { xs: 12, sm: 14, md: 16 },
+                            borderRadius: "8px",
+                            boxShadow: "0 2px 6px rgba(0,255,0,0.3)",
+                            "&:hover": {
+                              backgroundImage:
+                                "linear-gradient(90deg, #00cc66, #00994d)",
+                              color: "#000",
+                            },
+                          }}
+                        >
+                          Visit Site
+                        </Button>
+                      </Box>
+                    )}
+                  </Box>
+
+                  <Typography
+                    variant="subtitle2"
+                    sx={{ mb: 1, color: "#81e6d9" }}
+                  >
                     {project.duration}
                   </Typography>
-                  <Typography variant="body2" sx={{ mb: 2 }}>
+
+                  <Typography variant="body2" sx={{ mb: 2, color: "#e0f2f1" }}>
                     {project.description}
                   </Typography>
 
                   {/* Tech Stack */}
-                  <Box>
+                  <Box sx={{ mb: 2 }}>
                     <Typography variant="subtitle2">Tech Used:</Typography>
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
+                    <Box
+                      sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}
+                    >
                       {project.tech.map((tech, i) => (
                         <Chip
                           key={i}
                           label={tech}
                           variant="outlined"
-                          sx={{ backgroundColor: "#e0e0e0" }}
+                          sx={{
+                            backgroundColor: "#1de9b6",
+                            color: "#0f2027",
+                            fontWeight: 500,
+                            border: "none",
+                          }}
                         />
                       ))}
                     </Box>

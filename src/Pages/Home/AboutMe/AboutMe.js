@@ -100,8 +100,6 @@ const styles = {
 };
 
 const AboutMe = () => {
-
-
   const Education = () => {
     return (
       <Box
